@@ -9,15 +9,8 @@
 </head>
 <body>
   <p>Hello</p>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
   <script src="/socket.io/socket.io.js"></script>
-  <script>
-    let socket = io();
-    socket.on('connect',()=>{
-      console.log('Connected to server');
-    });
-    socket.on('disconnect',()=>{
-      console.log('disconnected from server');
-    });
-  </script>
+  <script src="index.js"></script>
 </body>
 </html>
