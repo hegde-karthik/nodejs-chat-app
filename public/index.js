@@ -1,12 +1,6 @@
 let socket = io();
 socket.on('connect',()=>{
   console.log('Connected to server');
-
-  socket.emit('createMsg',{
-    from:'client',
-    text:'hiii',
-  });
-
 });
 
 socket.on('disconnect',()=>{
@@ -19,4 +13,19 @@ socket.on('newEmail',(obj)=>{
 
 socket.on('newMsg',(obj)=>{
   console.log(obj);
+  let li = $('<li></li>');
+  li.text(`${obj.from}: ${obj.text}`);
+  $('#messages').append(li);
 })
+
+/*  *********************************************** */
+$('#chat-form').on('submit',(e)=>{
+  e.preventDefault();
+
+  socket.emit('createMsg',{
+    from:'User',
+    text:$('[name=message]').val()
+  },function(){
+
+  });
+});

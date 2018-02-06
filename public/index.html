@@ -8,9 +8,15 @@
   <!-- <link rel="stylesheet" href="css/style.css?v=1.0"> -->
 </head>
 <body>
-  <p>Hello</p>
-  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <ol id="messages">
+
+  </ol>
+  <form id="chat-form">
+    <input type="text" name="message" placeholder="Enter message">
+    <button>Send</button>
+  </form>
   <script src="/socket.io/socket.io.js"></script>
+  <script src="/libs/jquery.min.js"></script>
   <script src="index.js"></script>
 </body>
 </html>
